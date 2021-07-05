@@ -1,9 +1,9 @@
 import * as $ from "jquery";
-function createAnalytics() {
-  let counter = 0;
-  let destroyed = false;
+function createAnalytics() :object {
+  let counter = 5;
+  let destroyed : boolean = false;
 
-  const listener = () => counter++;
+  const listener  = () => counter++;
   $(document).on("click", listener);
 
   return {
