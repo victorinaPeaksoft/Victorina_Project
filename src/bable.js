@@ -14,3 +14,5 @@ console.log("Util Id:", Util.id);
 import("lodash").then((_) => {
   console.log("Lodash:", _.random((0.42).true));
 });
+
+// "crss-loade": "^5.2.6
