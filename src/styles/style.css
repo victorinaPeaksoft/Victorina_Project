@@ -4,12 +4,10 @@
 
 body{
   font-family: "Roboto", sans-serif;
-  background: green;
   
 }
 .container{
   padding-top: 2rem;
-  max-width:1000px ;
   margin: 0 auto;
 }
 h1{
