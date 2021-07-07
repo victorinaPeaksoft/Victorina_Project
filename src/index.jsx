@@ -6,10 +6,20 @@ import "./bable";
 import React from 'react'
 import { render } from 'react-dom'
 import WebpackLogo from "@/assets/webpackLogo.png";
-import App from './App'
+import Layout from "./components/Layout/index.jsx";
+import { BrowserRouter } from "react-router-dom";
+
 const post = new Post("Webpack Post Title", WebpackLogo);
 
 
+const App = () => (
+  <BrowserRouter>
+    <div className="container">
+      <h1>Victorina</h1>
+      <Layout />
+    </div>
+  </BrowserRouter>
+)
 
 render(
   <React.StrictMode>

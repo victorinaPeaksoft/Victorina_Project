@@ -1,18 +1,22 @@
 import React from 'react'
-
-import Button from '@material-ui/core/Button';
-
 import './home.less'
-
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='main-page'>
+    <div className="Home">
       <div className="container">
-        <p>Тест  на личность и характер</p>
-        <h2>Узнавайте свой темперамент</h2>
-        <Button variant="contained" color="secondary">Начать</Button>
+        <p>Тесты  Личность и характер</p>
+        <h1>Узнавайте свой темпаремент</h1>
+        <Link to="question">
+          <Button variant="contained" color="primary">
+            Начать
+          </Button>
+        </Link>
+
       </div>
+
     </div>
   )
 }
