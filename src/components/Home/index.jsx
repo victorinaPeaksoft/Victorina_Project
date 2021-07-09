@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="container">
-        <p>Тесты  Личность и характер</p>
+        <p>Тест на Личность и характер</p>
         <h1>Узнавайте свой темпаремент</h1>
         <Link to="question">
           <Button variant="contained" color="primary">
