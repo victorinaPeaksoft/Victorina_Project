@@ -10,19 +10,16 @@ import { setVictorina, filterVictorina } from "../../store/actions";
 
 import { data } from "../../data";
 
-
 const Question = () => {
   // let history = useHistory()
   // history.push("/question");
   const dispatch = useDispatch();
 
   const state = useSelector((state) => state);
-  
- 
-  
- 
- 
 
+  const onFilter = (state) => {
+    state.sort((a, b) => (a > b ? 1 : -1));
+  };
   // const types = {
   //   sanguine: 1,
   //   melancholic: 2,
@@ -30,15 +27,11 @@ const Question = () => {
   //   choleric: 4,
   // };
 
- 
-
   // let arr = []
 
   const onHandle = (key) => {
-    
     dispatch(setVictorina(key));
     console.log(state);
-    
   };
   return (
     <div>
@@ -54,17 +47,17 @@ const Question = () => {
             }}
           >
             <div>{el.question}</div>
-            {
-              el.answer.map((el,id) => {
-                return  <Button key={id} onClick={() => onHandle(el.key)}>{el.option}</Button>
-           
-              })
-            }
-          
+            {el.answer.map((el, id) => {
+              return (
+                <Button key={id} onClick={() => onHandle(el.key)}>
+                  {el.option}
+                </Button>
+              );
+            })}
           </Card>
         );
       })}
-      <Button>Ответ</Button>
+      <Button onClick={() => onFilter(state)}>Ответ</Button>
     </div>
   );
 };

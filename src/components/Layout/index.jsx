@@ -1,8 +1,8 @@
-import React from 'react'
-import Home from '../Home/index.jsx'
-import { Route, Switch } from 'react-router'
-import Question from '../../components/Question/index.jsx'
-import { useSelector } from 'react-redux'
+import React from "react";
+import Home from "../Home/index.jsx";
+import { Route, Switch } from "react-router";
+import Question from "../../components/Question/index.jsx";
+
 
 function Layout() {
   return (
@@ -12,7 +12,7 @@ function Layout() {
         <Route path="/" component={Home} />
       </Switch>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

@@ -7,20 +7,12 @@ const initialState = {
     phlegmatic: 0,
     choleric: 0,
   },
-
 };
 
 export const rootReducers = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
     case SET_VICTORINA:
-      // const types = {
-      //   sanguine: 1,
-      //   melancholic: 2,
-      //   phlegmatic: 3,
-      //   choleric: 4,
-      // };
-
       if (action.key === 1) {
         return {
           ...state,
@@ -28,7 +20,6 @@ export const rootReducers = (state = initialState, action) => {
             ...state.currentUserAnswer,
             sanguine: state.currentUserAnswer.sanguine + 1,
           },
-          
         };
       } else if (action.key === 2) {
         return {
@@ -37,7 +28,6 @@ export const rootReducers = (state = initialState, action) => {
             ...state.currentUserAnswer,
             phlegmatic: state.currentUserAnswer.phlegmatic + 1,
           },
-          
         };
       } else if (action.key === 3) {
         return {
@@ -46,7 +36,6 @@ export const rootReducers = (state = initialState, action) => {
             ...state.currentUserAnswer,
             melancholic: state.currentUserAnswer.melancholic + 1,
           },
-         
         };
       } else if (action.key === 4) {
         return {
@@ -55,13 +44,10 @@ export const rootReducers = (state = initialState, action) => {
             ...state.currentUserAnswer,
             choleric: state.currentUserAnswer.choleric + 1,
           },
-         
         };
       }
 
     default:
       return state;
-      
   }
-
 };
