@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from '../Home/index.jsx'
 import { Route, Switch } from 'react-router'
-import Question from '../Questions/index.jsx'
+import Question from '../../components/Question/index.jsx'
 
 
 function Layout() {

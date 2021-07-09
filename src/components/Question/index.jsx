@@ -1,12 +1,15 @@
 import React from 'react'
+// import { data } from '../../data.js'
+// Component
 
 const Question = () => {
+
+
   return (
     <div>
-      frage
-      frage
     </div>
-  )
+  );
+
 }
 
 export default Question
