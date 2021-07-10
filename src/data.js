@@ -1,132 +1,107 @@
-export const data = [
+export const quizData = [
   {
-    question: "Считаете ли вы свои привычки хорошими?",
-    answer: [
+    question: "Ты комфортно чувствуешь себя в одиночестве",
+    answers: [
       {
-        option:'да',
-        text: "sanguine",
-        key: 1,
+        variant: "Часто",
+        label_id: 1,
       },
       {
-        option:'скорее да ',
-        text: "choleric",
-        key: 2,
+        variant: "Иногда",
+        label_id: 2,
       },
       {
-        option:'затрудняюсь ответить ',
-        text: "melancholic",
-        key: 3,
+        variant: "Все время",
+        label_id: 3,
       },
       {
-        option:'нет ',
-        text: "phlegmatic",
-        key: 4,
+        variant: "Ни когда",
+        label_id: 3,
       },
     ],
   },
   {
-    question: "Раздражительны ли вы?",
-
-    answer: [
+    question:
+      " В тишине ты чувствуешь себя неуютно и стараешься чем-то заполнить ее",
+    answers: [
       {
-        option:'да',
-        text: "choleric",
-        key: 1,
+        variant: "Часто",
+        label_id: 1,
       },
       {
-        option:'скорее да ',
-        text: "sanguine",
-        key: 2,
+        variant: "Иногда",
+        label_id: 2,
       },
       {
-        option:'затрудняюсь ответить ',
-        text: "melancholic",
-        key: 3,
+        variant: "Все время",
+        label_id: 3,
       },
       {
-        option:'нет ',
-        text: "phlegmatic",
-        key: 4,
+        variant: "Ни когда",
+        label_id: 3,
       },
     ],
   },
   {
-    question: "Верно ли, что вас легко задеть?",
-
-    answer: [
+    question: " Ты легко находишь общий язык с незнакомцами",
+    answers: [
       {
-        option:'да',
-        text: "choleric",
-        key: 1,
+        variant: "Часто",
+        label_id: 1,
       },
       {
-        option:'скорее да ',
-        text: "sanguine",
-        key: 2,
+        variant: "Иногда",
+        label_id: 2,
       },
       {
-        option:'затрудняюсь ответить ',
-        text: "melancholic",
-        key: 3,
+        variant: "Все время",
+        label_id: 3,
       },
       {
-        option:'нет ',
-        text: "phlegmatic",
-        key: 4,
+        variant: "Ни когда",
+        label_id: 3,
       },
     ],
   },
-  ,
   {
-    question: "Когда на вас кричат, отвечаете ли тем же?",
-
-    answer: [
+    question: "  У тебя много знакомых и друзей",
+    answers: [
       {
-        option:'да',
-        text: "choleric",
-        key: 1,
+        variant: "Часто",
+        label_id: 1,
       },
       {
-        option:'скорее да ',
-        text: "sanguine",
-        key: 2,
+        variant: "Иногда",
+        label_id: 2,
       },
       {
-        option:'затрудняюсь ответить ',
-        text: "melancholic",
-        key: 3,
+        variant: "Все время",
+        label_id: 3,
       },
       {
-        option:'нет ',
-        text: "phlegmatic",
-        key: 4,
+        variant: "Ни когда",
+        label_id: 3,
       },
     ],
   },
-  ,
   {
-    question: " Считаете ли вы свои привычки хорошими?",
-
-    answer: [
+    question: " Тебе сложно усидеть на месте",
+    answers: [
       {
-        option:'да',
-        text: "sanguine",
-        key: 1,
+        variant: "Часто",
+        label_id: 1,
       },
       {
-        option:'скорее да ',
-        text: "choleric",
-        key: 2,
+        variant: "Иногда",
+        label_id: 2,
       },
       {
-        option:'затрудняюсь ответить ',
-        text: "melancholic",
-        key: 3,
+        variant: "Все время",
+        label_id: 3,
       },
       {
-        option:'нет ',
-        text: "phlegmatic",
-        key: 4,
+        variant: "Ни когда",
+        label_id: 3,
       },
     ],
   },
