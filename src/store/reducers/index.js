@@ -1,53 +1,37 @@
-import { SET_VICTORINA } from "../actions";
-
+import { quizData } from "../../data";
+const local = JSON.parse(localStorage.getItem("questions"));
 const initialState = {
-  currentUserAnswer: {
-    sanguine: 0,
-    melancholic: 0,
-    phlegmatic: 0,
-    choleric: 0,
-  },
+  data: quizData,
+  currentIndex: 0,
+  melanholik: 0,
+  sangvinnik: 0,
+  fregmatik: 0,
+  holerik: 0,
+  // trueAns: 0,
 };
 
-export const rootReducers = (state = initialState, action) => {
-  console.log(action);
+const rootReducer = (state = local ? local : initialState, action) => {
   switch (action.type) {
-    case SET_VICTORINA:
-      if (action.key === 1) {
-        return {
-          ...state,
-          currentUserAnswer: {
-            ...state.currentUserAnswer,
-            sanguine: state.currentUserAnswer.sanguine + 1,
-          },
-        };
-      } else if (action.key === 2) {
-        return {
-          ...state,
-          currentUserAnswer: {
-            ...state.currentUserAnswer,
-            phlegmatic: state.currentUserAnswer.phlegmatic + 1,
-          },
-        };
-      } else if (action.key === 3) {
-        return {
-          ...state,
-          currentUserAnswer: {
-            ...state.currentUserAnswer,
-            melancholic: state.currentUserAnswer.melancholic + 1,
-          },
-        };
-      } else if (action.key === 4) {
-        return {
-          ...state,
-          currentUserAnswer: {
-            ...state.currentUserAnswer,
-            choleric: state.currentUserAnswer.choleric + 1,
-          },
-        };
+    case "NEXT_QUESTION":
+      if (state.currentIndex === state.data.length - 1) {
+        return state;
       }
-
+      return {
+        ...state,
+        currentIndex: state.currentIndex + 1,
+        melanholik: state.melanholik + 1,
+      };
+    case "PREV_QUESTION":
+      if (state.currentIndex === 0) {
+        return state;
+      }
+      return {
+        ...state,
+        currentIndex: state.currentIndex - 1,
+      };
     default:
       return state;
   }
 };
+
+export default rootReducer;

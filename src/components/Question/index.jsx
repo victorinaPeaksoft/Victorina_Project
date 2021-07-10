@@ -1,63 +1,79 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useHistory } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { Card } from "@material-ui/core";
-import { Button } from "@material-ui/core";
-
-import { setVictorina, filterVictorina } from "../../store/actions";
-
-import { data } from "../../data";
+import { nextClick, prevClick } from '../../store/actions/index'
+import "./Question.less"
 
 const Question = () => {
-  // let history = useHistory()
-  // history.push("/question");
-  const dispatch = useDispatch();
-
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const currentIndex = state.currentIndex;
+  const data = state.data;
+  const [selected, setSelected] = useState("");
 
-  const onFilter = (state) => {
-    state.sort((a, b) => (a > b ? 1 : -1));
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(state));
+  }, [state]);
+
+  const prev = () => {
+    dispatch(prevClick);
   };
-  // const types = {
-  //   sanguine: 1,
-  //   melancholic: 2,
-  //   phlegmatic: 3,
-  //   choleric: 4,
-  // };
 
-  // let arr = []
-
-  const onHandle = (key) => {
-    dispatch(setVictorina(key));
-    console.log(state);
+  const next = (e) => {
+    const current = e.target.value;
+    dispatch(nextClick(current));
+    console.log(e.target.value);
   };
+
   return (
-    <div>
-      {data.map((el, id) => {
-        return (
-          <Card
-            key={id}
-            style={{
-              width: 500,
-              paddingTop: 15,
-              backgroundColor: " rgb(150, 240, 234)",
-              marginBottom: 50,
-            }}
-          >
-            <div>{el.question}</div>
-            {el.answer.map((el, id) => {
+    <div className="container">
+      <div className="content">
+        <div className="single_question">
+          <h2>{data[currentIndex].question} </h2>
+          <ul>
+            {data[currentIndex].answers.map((item, id) => {
               return (
-                <Button key={id} onClick={() => onHandle(el.key)}>
-                  {el.option}
-                </Button>
+                <li key={id}>
+                  <input
+                    type="radio"
+                    id={`answer_id_${item.label_id}`}
+                    onClick={next}
+                    value={item.variant}
+                    name="radiovalues"
+                  />
+                  <label
+                    htmlFor={`answer_id_${item.label_id}`}
+                    onClick={next}
+                  >
+                    {item.variant}
+                  </label>
+                </li>
               );
             })}
-          </Card>
-        );
-      })}
-      <Button onClick={() => onFilter(state)}>Ответ</Button>
+          </ul>
+        </div>
+        <h3>
+          {currentIndex}/{data.length - 1}
+        </h3>
+      </div>
+      <div className="btn_controllers">
+        {currentIndex > 0 ? (
+          <button className="btn" onClick={prev}>
+            PREV
+          </button>
+        ) : (
+          ""
+        )}
+        {currentIndex === data.length - 1 && (
+          <Link to='/result'>
+            <button>
+              Submit
+            </button>
+          </Link>
+
+        )}
+      </div>
     </div>
   );
 };
