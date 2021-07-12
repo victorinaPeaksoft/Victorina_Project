@@ -1,20 +1,51 @@
 import { quizData } from "../../data";
+import { SET_VICTORINA } from "../actions";
 const local = JSON.parse(localStorage.getItem("questions"));
 const initialState = {
-  data: quizData,
-  currentIndex: 0,
-  melanholik: 0,
-  sangvinnik: 0,
-  fregmatik: 0,
-  holerik: 0,
-  // trueAns: 0,
+  currentUserAnswer: {
+    sanguine:[],
+    melancholic: [],
+    phlegmatic: [],
+    choleric: [],
+  },
+ 
 };
 
 const rootReducer = (state = local ? local : initialState, action) => {
   switch (action.type) {
-    case "NEXT_QUESTION":
-      if (state.currentIndex === state.data.length - 1) {
-        return state;
+    case SET_VICTORINA:
+      if (action.key === 1) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            sanguine:  [...state.currentUserAnswer.sanguine, 1],
+          },
+        };
+      } else if (action.key === 2) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            phlegmatic:  [...state.currentUserAnswer.phlegmatic, 2],
+          },
+        };
+      } else if (action.key === 3) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            melancholic: [...state.currentUserAnswer.melancholic, 3],
+          },
+        };
+      } else if (action.key === 4) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            choleric:  [...state.currentUserAnswer.choleric, 4],
+          },
+        };
       }
       return {
         ...state,
