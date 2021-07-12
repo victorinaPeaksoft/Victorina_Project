@@ -11,10 +11,10 @@ const Question = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.currentUserAnswer);
   // const sanguine = useSelector((state) => state.currentUserAnswer.sanguine)
-  // const sanguine = state.sanguine.length;
-  // const melancholic = state.melancholic.length;
-  // const phlegmatic = state.phlegmatic.length;
-  // const choleric = state.choleric.length;
+  const sanguine = state.sanguine.length;
+  const melancholic = state.melancholic.length;
+  const phlegmatic = state.phlegmatic.length;
+  const choleric = state.choleric.length;
 
 
   const onFilter = () => {

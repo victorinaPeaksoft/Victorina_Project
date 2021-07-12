@@ -12,7 +12,7 @@ function Layout() {
       <Switch>
       <Route path="/result" component={Result} />
         <Route path="/question" component={Question} />
-        <Route path="/" component={Home} />
+        <Route path="/" exact component={Home} />
       </Switch>
     </div>
   );
