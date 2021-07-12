@@ -10,7 +10,7 @@ export const data = [
       {
         option:'скорее да ',
         text: "choleric",
-        key: 2,
+        key: 4,
       },
       {
         option:'затрудняюсь ответить ',
@@ -20,7 +20,7 @@ export const data = [
       {
         option:'нет ',
         text: "phlegmatic",
-        key: 4,
+        key: 2,
       },
     ],
   },

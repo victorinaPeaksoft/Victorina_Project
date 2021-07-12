@@ -1,24 +1,35 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useHistory } from "react-router";
-
+import { Link } from "react-router-dom";
 import { Card } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-
-import { setVictorina, filterVictorina } from "../../store/actions";
-
+import { setVictorina,  } from "../../store/actions";
 import { data } from "../../data";
 
+
 const Question = () => {
-  // let history = useHistory()
-  // history.push("/question");
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.currentUserAnswer);
+  // const sanguine = useSelector((state) => state.currentUserAnswer.sanguine)
+  // const sanguine = state.sanguine.length;
+  // const melancholic = state.melancholic.length;
+  // const phlegmatic = state.phlegmatic.length;
+  // const choleric = state.choleric.length;
 
-  const state = useSelector((state) => state);
 
-  const onFilter = (state) => {
-    state.sort((a, b) => (a > b ? 1 : -1));
+  const onFilter = () => {
+    console.log(state )
+    // if(sanguine.length > 10){
+    //   return 'sanguine'
+    // }else if(melancholic.length > 10){
+    //   return 'melancholic'
+    // }else if(phlegmatic.length > 10){
+    //   return 'phlegmatic'
+    // }else if(choleric.length > 10){
+    //   return 'choleric'
+    // }
+    
+    
   };
   // const types = {
   //   sanguine: 1,
@@ -27,11 +38,10 @@ const Question = () => {
   //   choleric: 4,
   // };
 
-  // let arr = []
+  
 
   const onHandle = (key) => {
     dispatch(setVictorina(key));
-    console.log(state);
   };
   return (
     <div>
@@ -57,7 +67,14 @@ const Question = () => {
           </Card>
         );
       })}
-      <Button onClick={() => onFilter(state)}>Ответ</Button>
+      <Link to='/result'>
+      <Button onClick={onFilter}>Ответ</Button>
+      </Link>
+     
+      {/* <h3>{state.sanguine}</h3>
+      <h3>{state.melancholic}</h3>
+      <h3>{state.phlegmatic}</h3>
+      <h3>{state.choleric}</h3> */}
     </div>
   );
 };

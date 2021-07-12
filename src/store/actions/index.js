@@ -16,7 +16,7 @@ export const prevVictorina = () => ({
   type: PREV_VICTORINA,
 });
 
-export const filterVictorina = (filter) => ({
+export const filterVictorina = (key) => ({
   type: FILTER_VICTORINA,
-  filter,
+  key,
 });

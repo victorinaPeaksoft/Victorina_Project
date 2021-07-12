@@ -78,6 +78,7 @@ module.exports = {
     port: 4200,
     open: true,
     hot: isDev,
+    historyApiFallback: true,
   },
   devtool: isProd ? false : "source-map",
   plugins: [
