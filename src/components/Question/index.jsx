@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Card } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-import { setVictorina,  } from "../../store/actions";
+import { setVictorina, } from "../../store/actions";
 import { data } from "../../data";
 
 
@@ -18,7 +18,7 @@ const Question = () => {
 
 
   const onFilter = () => {
-    console.log(state )
+    console.log(state)
     // if(sanguine.length > 10){
     //   return 'sanguine'
     // }else if(melancholic.length > 10){
@@ -28,8 +28,8 @@ const Question = () => {
     // }else if(choleric.length > 10){
     //   return 'choleric'
     // }
-    
-    
+
+
   };
   // const types = {
   //   sanguine: 1,
@@ -38,7 +38,7 @@ const Question = () => {
   //   choleric: 4,
   // };
 
-  
+
 
   const onHandle = (key) => {
     dispatch(setVictorina(key));
@@ -68,9 +68,9 @@ const Question = () => {
         );
       })}
       <Link to='/result'>
-      <Button onClick={onFilter}>Ответ</Button>
+        <Button onClick={onFilter}>Ответ</Button>
       </Link>
-     
+
       {/* <h3>{state.sanguine}</h3>
       <h3>{state.melancholic}</h3>
       <h3>{state.phlegmatic}</h3>

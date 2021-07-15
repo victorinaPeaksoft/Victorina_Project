@@ -3,15 +3,15 @@ import { SET_VICTORINA } from "../actions";
 const local = JSON.parse(localStorage.getItem("questions"));
 const initialState = {
   currentUserAnswer: {
-    sanguine:[],
+    sanguine: [],
     melancholic: [],
     phlegmatic: [],
     choleric: [],
   },
- 
 };
 
-const rootReducer = (state = local ? local : initialState, action) => {
+const rootReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case SET_VICTORINA:
       if (action.key === 1) {
@@ -19,7 +19,7 @@ const rootReducer = (state = local ? local : initialState, action) => {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            sanguine:  [...state.currentUserAnswer.sanguine, 1],
+            sanguine: [...state.currentUserAnswer.sanguine, 1],
           },
         };
       } else if (action.key === 2) {
@@ -27,7 +27,7 @@ const rootReducer = (state = local ? local : initialState, action) => {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            phlegmatic:  [...state.currentUserAnswer.phlegmatic, 2],
+            phlegmatic: [...state.currentUserAnswer.phlegmatic, 2],
           },
         };
       } else if (action.key === 3) {
@@ -43,14 +43,13 @@ const rootReducer = (state = local ? local : initialState, action) => {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            choleric:  [...state.currentUserAnswer.choleric, 4],
+            choleric: [...state.currentUserAnswer.choleric, 4],
           },
         };
       }
       return {
         ...state,
         currentIndex: state.currentIndex + 1,
-        melanholik: state.melanholik + 1,
       };
     case "PREV_QUESTION":
       if (state.currentIndex === 0) {
@@ -60,6 +59,7 @@ const rootReducer = (state = local ? local : initialState, action) => {
         ...state,
         currentIndex: state.currentIndex - 1,
       };
+
     default:
       return state;
   }

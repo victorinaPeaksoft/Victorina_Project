@@ -3,22 +3,22 @@ export const data = [
     question: "Считаете ли вы свои привычки хорошими?",
     answer: [
       {
-        option:'да',
+        option: "да",
         text: "sanguine",
         key: 1,
       },
       {
-        option:'скорее да ',
+        option: "скорее да ",
         text: "choleric",
         key: 4,
       },
       {
-        option:'затрудняюсь ответить ',
+        option: "затрудняюсь ответить ",
         text: "melancholic",
         key: 3,
       },
       {
-        option:'нет ',
+        option: "нет ",
         text: "phlegmatic",
         key: 2,
       },
@@ -29,22 +29,22 @@ export const data = [
 
     answer: [
       {
-        option:'да',
+        option: "да",
         text: "choleric",
         key: 1,
       },
       {
-        option:'скорее да ',
+        option: "скорее да ",
         text: "sanguine",
         key: 2,
       },
       {
-        option:'затрудняюсь ответить ',
+        option: "затрудняюсь ответить ",
         text: "melancholic",
         key: 3,
       },
       {
-        option:'нет ',
+        option: "нет ",
         text: "phlegmatic",
         key: 4,
       },
@@ -55,22 +55,22 @@ export const data = [
 
     answer: [
       {
-        option:'да',
+        option: "да",
         text: "choleric",
         key: 1,
       },
       {
-        option:'скорее да ',
+        option: "скорее да ",
         text: "sanguine",
         key: 2,
       },
       {
-        option:'затрудняюсь ответить ',
+        option: "затрудняюсь ответить ",
         text: "melancholic",
         key: 3,
       },
       {
-        option:'нет ',
+        option: "нет ",
         text: "phlegmatic",
         key: 4,
       },
@@ -82,22 +82,22 @@ export const data = [
 
     answer: [
       {
-        option:'да',
+        option: "да",
         text: "choleric",
         key: 1,
       },
       {
-        option:'скорее да ',
+        option: "скорее да ",
         text: "sanguine",
         key: 2,
       },
       {
-        option:'затрудняюсь ответить ',
+        option: "затрудняюсь ответить ",
         text: "melancholic",
         key: 3,
       },
       {
-        option:'нет ',
+        option: "нет ",
         text: "phlegmatic",
         key: 4,
       },
@@ -109,22 +109,22 @@ export const data = [
 
     answer: [
       {
-        option:'да',
+        option: "да",
         text: "sanguine",
         key: 1,
       },
       {
-        option:'скорее да ',
+        option: "скорее да ",
         text: "choleric",
         key: 2,
       },
       {
-        option:'затрудняюсь ответить ',
+        option: "затрудняюсь ответить ",
         text: "melancholic",
         key: 3,
       },
       {
-        option:'нет ',
+        option: "нет ",
         text: "phlegmatic",
         key: 4,
       },
