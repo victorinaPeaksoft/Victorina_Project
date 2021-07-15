@@ -1,8 +1,9 @@
-export const quizData = [
+export const data = [
   {
-    question: "Ты комфортно чувствуешь себя в одиночестве",
-    answers: [
+    question: "Считаете ли вы свои привычки хорошими?",
+    answer: [
       {
+<<<<<<< HEAD
         variant: "Часто",
         key: 1,
       },
@@ -17,14 +18,35 @@ export const quizData = [
       {
         variant: "Ни когда",
         key: 4,
+=======
+        option:'да',
+        text: "sanguine",
+        key: 1,
+      },
+      {
+        option:'скорее да ',
+        text: "choleric",
+        key: 4,
+      },
+      {
+        option:'затрудняюсь ответить ',
+        text: "melancholic",
+        key: 3,
+      },
+      {
+        option:'нет ',
+        text: "phlegmatic",
+        key: 2,
+>>>>>>> 574a6cc53d78f01c3881cb8aac93b042e89b8633
       },
     ],
   },
   {
-    question:
-      " В тишине ты чувствуешь себя неуютно и стараешься чем-то заполнить ее",
-    answers: [
+    question: "Раздражительны ли вы?",
+
+    answer: [
       {
+<<<<<<< HEAD
         variant: "Часто",
         key: 1,
       },
@@ -38,14 +60,35 @@ export const quizData = [
       },
       {
         variant: "Ни когда",
+=======
+        option:'да',
+        text: "choleric",
+        key: 1,
+      },
+      {
+        option:'скорее да ',
+        text: "sanguine",
+        key: 2,
+      },
+      {
+        option:'затрудняюсь ответить ',
+        text: "melancholic",
+        key: 3,
+      },
+      {
+        option:'нет ',
+        text: "phlegmatic",
+>>>>>>> 574a6cc53d78f01c3881cb8aac93b042e89b8633
         key: 4,
       },
     ],
   },
   {
-    question: " Ты легко находишь общий язык с незнакомцами",
-    answers: [
+    question: "Верно ли, что вас легко задеть?",
+
+    answer: [
       {
+<<<<<<< HEAD
         variant: "Часто",
         key: 1,
       },
@@ -59,14 +102,36 @@ export const quizData = [
       },
       {
         variant: "Ни когда",
+=======
+        option:'да',
+        text: "choleric",
+        key: 1,
+      },
+      {
+        option:'скорее да ',
+        text: "sanguine",
+        key: 2,
+      },
+      {
+        option:'затрудняюсь ответить ',
+        text: "melancholic",
+        key: 3,
+      },
+      {
+        option:'нет ',
+        text: "phlegmatic",
+>>>>>>> 574a6cc53d78f01c3881cb8aac93b042e89b8633
         key: 4,
       },
     ],
   },
+  ,
   {
-    question: "  У тебя много знакомых и друзей",
-    answers: [
+    question: "Когда на вас кричат, отвечаете ли тем же?",
+
+    answer: [
       {
+<<<<<<< HEAD
         variant: "Часто",
         key: 1,
       },
@@ -80,14 +145,36 @@ export const quizData = [
       },
       {
         variant: "Ни когда",
+=======
+        option:'да',
+        text: "choleric",
+        key: 1,
+      },
+      {
+        option:'скорее да ',
+        text: "sanguine",
+        key: 2,
+      },
+      {
+        option:'затрудняюсь ответить ',
+        text: "melancholic",
+        key: 3,
+      },
+      {
+        option:'нет ',
+        text: "phlegmatic",
+>>>>>>> 574a6cc53d78f01c3881cb8aac93b042e89b8633
         key: 4,
       },
     ],
   },
+  ,
   {
-    question: " Тебе сложно усидеть на месте",
-    answers: [
+    question: " Считаете ли вы свои привычки хорошими?",
+
+    answer: [
       {
+<<<<<<< HEAD
         variant: "Часто",
         key: 1,
       },
@@ -441,6 +528,25 @@ export const quizData = [
       {
         variant:
           "Остаюсь спокойным или немного нервничаю, но верю, что все будет хорошо",
+=======
+        option:'да',
+        text: "sanguine",
+        key: 1,
+      },
+      {
+        option:'скорее да ',
+        text: "choleric",
+        key: 2,
+      },
+      {
+        option:'затрудняюсь ответить ',
+        text: "melancholic",
+        key: 3,
+      },
+      {
+        option:'нет ',
+        text: "phlegmatic",
+>>>>>>> 574a6cc53d78f01c3881cb8aac93b042e89b8633
         key: 4,
       },
     ],
