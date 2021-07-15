@@ -41,6 +41,7 @@ const Question = () => {
                     >
                       <input
                         type="radio"
+                    
                         id={`${item.key}`}
                         value={item.key}
                         name="radiovalues"

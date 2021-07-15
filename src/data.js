@@ -1,9 +1,9 @@
 export const quizData = [
   {
-    question: "Ты комфортно чувствуешь себя в одиночестве?",
+    question:"Ты комфортно чувствуешь себя в одиночестве?",
     answers: [
       {
-        variant: "Часто",
+        variant: "Да",
         key: 1,
       },
       {
@@ -15,7 +15,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -25,7 +25,7 @@ export const quizData = [
       " В тишине ты чувствуешь себя неуютно и стараешься чем-то заполнить ее?",
     answers: [
       {
-        variant: "Часто",
+        variant: "Да",
         key: 1,
       },
       {
@@ -37,7 +37,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -58,28 +58,28 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
   },
   {
-    question: "  У тебя много знакомых и друзей?",
+    question: "У тебя много знакомых и друзей?",
     answers: [
       {
-        variant: "Часто",
+        variant: "Да",
         key: 1,
       },
       {
-        variant: "Иногда",
+        variant: "Скорее да ",
         key: 2,
       },
       {
-        variant: "Все время",
+        variant: "Нет",
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Скорее нет",
         key: 4,
       },
     ],
@@ -100,7 +100,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -122,7 +122,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -143,13 +143,13 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
   },
   {
-    question: "  Вам тяжело быть разговорчивым с новыми знакомыми?",
+    question: "Вам тяжело быть разговорчивым с новыми знакомыми?",
     answers: [
       {
         variant: "Нет",
@@ -164,7 +164,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Ни когда",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -216,19 +216,19 @@ export const quizData = [
     question: " Страдаете от бессонницы?",
     answers: [
       {
-        variant: "Тяжело",
+        variant: "Нет",
         key: 1,
       },
       {
-        variant: "По-разному",
+        variant: "Да",
         key: 2,
       },
       {
-        variant: "Только если сильно нервничаю",
+        variant: "Иногда",
         key: 3,
       },
       {
-        variant: "Легко",
+        variant: "Никогда",
         key: 4,
       },
     ],
@@ -318,7 +318,7 @@ export const quizData = [
     ],
   },
   {
-    question: " Часто ли у вас меняется настроение без веских на то причин?",
+    question: "Когда на вас кричат, отвечаете ли тем же?",
     answers: [
       {
         variant: "Да",
@@ -333,7 +333,7 @@ export const quizData = [
         key: 3,
       },
       {
-        variant: "Смотря с какими",
+        variant: "Скоре да",
         key: 4,
       },
     ],
