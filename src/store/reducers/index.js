@@ -1,25 +1,60 @@
 import { quizData } from "../../data";
-const local = JSON.parse(localStorage.getItem("questions"));
+// import { SET_VICTORINA } from "../actions/index";
+// const local = JSON.parse(localStorage.getItem("questions"));
+
 const initialState = {
   data: quizData,
   currentIndex: 0,
-  melanholik: 0,
-  sangvinnik: 0,
-  fregmatik: 0,
-  holerik: 0,
-  // trueAns: 0,
+  currentUserAnswer: {
+    melancholic: [],
+    sanguine: [],
+    phlegmatic: [],
+    choleric: [],
+  },
 };
 
-const rootReducer = (state = local ? local : initialState, action) => {
+const rootReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case "NEXT_QUESTION":
-      if (state.currentIndex === state.data.length - 1) {
+      if (action.current === 1) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            melancholic: [...state.currentUserAnswer.melancholic, 1],
+          },
+        };
+      } else if (action.current === 2) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            sanguine: [...state.currentUserAnswer.sanguine, 2],
+          },
+        };
+      } else if (action.current === 3) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            phlegmatic: [...state.currentUserAnswer.phlegmatic, 3],
+          },
+        };
+      } else if (action.current === 4) {
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            choleric: [...state.currentUserAnswer.choleric, 4],
+          },
+        };
+      } else if (state.currentIndex === state.data.length - 1) {
         return state;
       }
       return {
         ...state,
         currentIndex: state.currentIndex + 1,
-        melanholik: state.melanholik + 1,
       };
     case "PREV_QUESTION":
       if (state.currentIndex === 0) {
@@ -29,6 +64,7 @@ const rootReducer = (state = local ? local : initialState, action) => {
         ...state,
         currentIndex: state.currentIndex - 1,
       };
+
     default:
       return state;
   }
