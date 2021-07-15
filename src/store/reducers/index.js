@@ -1,10 +1,13 @@
 import { quizData } from "../../data";
-import { SET_VICTORINA } from "../actions";
-const local = JSON.parse(localStorage.getItem("questions"));
+// import { SET_VICTORINA } from "../actions/index";
+// const local = JSON.parse(localStorage.getItem("questions"));
+
 const initialState = {
+  data: quizData,
+  currentIndex: 0,
   currentUserAnswer: {
-    sanguine: [],
     melancholic: [],
+    sanguine: [],
     phlegmatic: [],
     choleric: [],
   },
@@ -13,32 +16,32 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
-    case SET_VICTORINA:
-      if (action.key === 1) {
+    case "NEXT_QUESTION":
+      if (action.current === 1) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            sanguine: [...state.currentUserAnswer.sanguine, 1],
+            melancholic: [...state.currentUserAnswer.melancholic, 1],
           },
         };
-      } else if (action.key === 2) {
+      } else if (action.current === 2) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            phlegmatic: [...state.currentUserAnswer.phlegmatic, 2],
+            sanguine: [...state.currentUserAnswer.sanguine, 2],
           },
         };
-      } else if (action.key === 3) {
+      } else if (action.current === 3) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
-            melancholic: [...state.currentUserAnswer.melancholic, 3],
+            phlegmatic: [...state.currentUserAnswer.phlegmatic, 3],
           },
         };
-      } else if (action.key === 4) {
+      } else if (action.current === 4) {
         return {
           ...state,
           currentUserAnswer: {
@@ -46,6 +49,8 @@ const rootReducer = (state = initialState, action) => {
             choleric: [...state.currentUserAnswer.choleric, 4],
           },
         };
+      } else if (state.currentIndex === state.data.length - 1) {
+        return state;
       }
       return {
         ...state,

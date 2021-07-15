@@ -2,7 +2,7 @@ import React from "react";
 import Home from "../Home/index.jsx";
 import { Route, Switch } from "react-router";
 import Question from "../../components/Question/index.jsx";
-import { Result } from "../Result/index.jsx";
+import Result from "../Result/index.jsx";
 
 
 
