@@ -1,7 +1,8 @@
 import React from 'react'
 import './home.less'
-import { CustomButton } from '../CustomButton'
 import { Link } from 'react-router-dom'
+import { Button } from "@material-ui/core";
+
 
 const Home = () => {
   return (
@@ -10,9 +11,9 @@ const Home = () => {
         <p>Тест на Личность и характер</p>
         <h1>Узнавайте свой темпаремент</h1>
         <Link to="question">
-          <CustomButton primary  >
+          <Button variant="contained" color="primary"  >
             Начать
-          </CustomButton>
+          </Button>
         </Link>
 
       </div>
