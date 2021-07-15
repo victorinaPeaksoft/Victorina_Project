@@ -3,49 +3,88 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Card } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-import { setVictorina,  } from "../../store/actions";
+import { setVictorina,nextVictorina,prevVictorina } from "../../store/actions";
 import { data } from "../../data";
-
 
 const Question = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.currentUserAnswer);
-  // const sanguine = useSelector((state) => state.currentUserAnswer.sanguine)
-  const sanguine = state.sanguine.length;
-  const melancholic = state.melancholic.length;
-  const phlegmatic = state.phlegmatic.length;
-  const choleric = state.choleric.length;
+ 
+  // const sanguine = state.sanguine.length;
+  // const melancholic = state.melancholic.length;
+  // const phlegmatic = state.phlegmatic.length;
+  // const choleric = state.choleric.length;
+  const currentIndex = useSelector((state) => state.currentIndex)
+  const dataState = useSelector((state) => state.data)
 
-
-  const onFilter = () => {
-    console.log(state )
-    // if(sanguine.length > 10){
-    //   return 'sanguine'
-    // }else if(melancholic.length > 10){
-    //   return 'melancholic'
-    // }else if(phlegmatic.length > 10){
-    //   return 'phlegmatic'
-    // }else if(choleric.length > 10){
-    //   return 'choleric'
-    // }
-    
-    
+ 
+  const prev = () => {
+    dispatch(prevVictorina);
   };
-  // const types = {
-  //   sanguine: 1,
-  //   melancholic: 2,
-  //   phlegmatic: 3,
-  //   choleric: 4,
-  // };
 
-  
+  const next = (e) => {
+    const current = e.target.value;
+    dispatch(nextVictorina(current));
+    console.log(state)
+    // dispatch(nextVictorina(key));
+    // console.log(state)
+   
+  };
 
   const onHandle = (key) => {
     dispatch(setVictorina(key));
+      console.log(state)
+  
+  
   };
   return (
+    
     <div>
-      {data.map((el, id) => {
+      <h2>{dataState[currentIndex].question}</h2>
+     <ul>
+       {dataState[currentIndex].answer.map((el,id) =>{
+         return (
+            
+           <li key={id}>
+             <input 
+             type="radio"
+             id={`${el.key}`}
+             onClick={() => onHandle(el.key),next}
+             value={el.option}
+             name="radiovalues"
+             />
+             <label
+              htmlFor={`key${el.key}`}
+              onClick={() => onHandle(el.key),next}
+             >
+               {el.option}
+             </label>
+           </li>
+         )
+       })}
+     </ul>
+     {/* <Button onClick={next}>Next</Button> */}
+     <h3>
+          {currentIndex + 1 }/{data.length - 2}
+        </h3>
+        <div>
+        {currentIndex > 1 ? (
+          <Button className="btn" onClick={prev} variant="contained" color="primary">
+            PREV
+          </Button>
+        ) : (
+          ""
+        )}
+        {currentIndex === data.length - 1 && (
+          <Link to='/result'>
+            <Button variant="contained" color="secondary">
+              Submit
+            </Button>
+          </Link>
+
+        )}
+        </div>
+      {/* {data.map((el, id) => {
         return (
           <Card
             key={id}
@@ -66,15 +105,12 @@ const Question = () => {
             })}
           </Card>
         );
-      })}
-      <Link to='/result'>
-      <Button onClick={onFilter}>Ответ</Button>
-      </Link>
-     
-      {/* <h3>{state.sanguine}</h3>
-      <h3>{state.melancholic}</h3>
-      <h3>{state.phlegmatic}</h3>
-      <h3>{state.choleric}</h3> */}
+      })} */}
+      {/* <Link to="/result">
+        <Button >Ответ</Button>
+      </Link> */}
+
+    
     </div>
   );
 };

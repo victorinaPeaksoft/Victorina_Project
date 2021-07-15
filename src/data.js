@@ -1,6 +1,7 @@
 export const data = [
   {
     question: "Считаете ли вы свои привычки хорошими?",
+    id:1,
     answer: [
       {
         option:'да',
@@ -26,7 +27,7 @@ export const data = [
   },
   {
     question: "Раздражительны ли вы?",
-
+    id:2,
     answer: [
       {
         option:'да',
@@ -52,7 +53,7 @@ export const data = [
   },
   {
     question: "Верно ли, что вас легко задеть?",
-
+    id:3,
     answer: [
       {
         option:'да',
@@ -79,7 +80,7 @@ export const data = [
   ,
   {
     question: "Когда на вас кричат, отвечаете ли тем же?",
-
+    id:4,
     answer: [
       {
         option:'да',
@@ -106,7 +107,7 @@ export const data = [
   ,
   {
     question: " Считаете ли вы свои привычки хорошими?",
-
+    id:5,
     answer: [
       {
         option:'да',
@@ -130,4 +131,5 @@ export const data = [
       },
     ],
   },
+  
 ];

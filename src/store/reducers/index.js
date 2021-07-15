@@ -1,7 +1,11 @@
-import { quizData } from "../../data";
-import { SET_VICTORINA } from "../actions";
-const local = JSON.parse(localStorage.getItem("questions"));
+import {data} from '../../data'
+import { SET_VICTORINA,PREV_VICTORINA,NEXT_VICTORINA } from "../actions";
+
+
+
 const initialState = {
+ currentIndex:0,
+  data:data,
   currentUserAnswer: {
     sanguine:[],
     melancholic: [],
@@ -11,7 +15,7 @@ const initialState = {
  
 };
 
-const rootReducer = (state = local ? local : initialState, action) => {
+const rootReducer = (state =  initialState, action) => {
   switch (action.type) {
     case SET_VICTORINA:
       if (action.key === 1) {
@@ -47,12 +51,8 @@ const rootReducer = (state = local ? local : initialState, action) => {
           },
         };
       }
-      return {
-        ...state,
-        currentIndex: state.currentIndex + 1,
-        melanholik: state.melanholik + 1,
-      };
-    case "PREV_QUESTION":
+     
+    case  PREV_VICTORINA:
       if (state.currentIndex === 0) {
         return state;
       }
@@ -60,6 +60,17 @@ const rootReducer = (state = local ? local : initialState, action) => {
         ...state,
         currentIndex: state.currentIndex - 1,
       };
+      case NEXT_VICTORINA :
+        if (state.currentIndex === state.data.length - 1 ) {
+          return {
+            ...state,
+            currentIndex : state.currentIndex 
+        }
+      }
+        return {
+          ...state,
+          currentIndex: state.currentIndex + 1,
+        };
     default:
       return state;
   }

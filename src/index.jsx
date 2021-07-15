@@ -8,17 +8,15 @@ import { render } from "react-dom";
 import Layout from "./components/Layout/index.jsx";
 import { BrowserRouter } from "react-router-dom";
 
-
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducers from "./store/reducers/index.js";
+// import Container from "@material-ui/core/Container";
 
-
-const store = createStore(rootReducers,
+const store = createStore(
+  rootReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
-)
-
+);
 
 const App = () => (
   <div className="container">
@@ -31,11 +29,9 @@ render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-
         <App />
       </Provider>
     </BrowserRouter>
-
   </React.StrictMode>,
   document.getElementById("root")
 );
