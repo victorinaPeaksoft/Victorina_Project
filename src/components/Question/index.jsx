@@ -52,7 +52,7 @@ const Question = () => {
           </ul>
         </div>
         <h3>
-          {currentIndex}/{data.length}
+          {currentIndex}/{data.length - 1}
         </h3>
       </div>
       <div className="btn_controllers">

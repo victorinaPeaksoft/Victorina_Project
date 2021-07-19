@@ -46,7 +46,7 @@ const rootReducer = (state = initialState, action) => {
             choleric: [...state.currentUserAnswer.choleric, 4],
           },
         };
-      } else if (state.currentIndex === state.data.length) {
+      } else if (state.currentIndex === state.data.length - 1) {
         return state;
       }
       return {
