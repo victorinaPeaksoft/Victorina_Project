@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import Container from '@material-ui/core/Container';
 import { nextClick, prevClick } from '../../store/actions/index'
 import "./Question.less"
 
@@ -21,7 +20,6 @@ const Question = () => {
   const next = (e) => {
     const current = e.target.value;
     dispatch(nextClick(Number(current)));
-    // console.log(e.target.value);
   };
 
   return (
