@@ -24,7 +24,7 @@ const store = createStore(
 const App = () => (
   <div className="app">
     <Container fixed>
-      <h1>Victorina</h1>
+      <h1 class="animate__animated animate__bounce">Викторина</h1>
       <Layout />
     </Container>
 

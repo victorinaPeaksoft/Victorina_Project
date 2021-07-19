@@ -21,61 +21,58 @@ const Question = () => {
   const next = (e) => {
     const current = e.target.value;
     dispatch(nextClick(Number(current)));
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   return (
-    <Container fixed>
-      <div className="container">
-        <div className="content">
-          <div className="single_question">
-            <h2>{data[currentIndex].question} </h2>
-            <ul>
-              {data[currentIndex].answers.map((item, id,) => {
-                return (
-                  <li key={id}>
-                    <label
-                      onClick={next}
+    <div className="container">
+      <div className="content">
+        <div className="single_question">
+          <h2>{data[currentIndex].question} </h2>
+          <ul>
+            {data[currentIndex].answers.map((item, id,) => {
+              return (
+                <li key={id}>
+                  <label
+                    onClick={next}
+                    id={`${item.key}`}
+                    value={item.key}
+                  >
+                    <input
+                      type="radio"
                       id={`${item.key}`}
                       value={item.key}
-                    >
-                      <input
-                        type="radio"
-                        id={`${item.key}`}
-                        value={item.key}
-                        name="radiovalues"
-                      />
-                      {item.variant}
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <h3>
-            {currentIndex}/{data.length - 1}
-          </h3>
+                      name="radiovalues"
+                    />
+                    {item.variant}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-        <div className="btn_controllers">
-          {currentIndex > 0 ? (
-            <Button className="btn" onClick={prev} variant="contained" color="primary">
-              PREV
-            </Button>
-          ) : (
-            ""
-          )}
-          {currentIndex === data.length - 1 && (
-            <Link to='/result'>
-              <Button variant="contained" color="secondary">
-                Submit
-              </Button>
-            </Link>
-
-          )}
-        </div>
+        <h3>
+          {currentIndex}/{data.length}
+        </h3>
       </div>
-    </Container>
+      <div className="btn_controllers">
+        {currentIndex > 0 ? (
+          <Button className="btn" onClick={prev} variant="contained" color="primary">
+            PREV
+          </Button>
+        ) : (
+          ""
+        )}
+        {currentIndex === data.length - 1 && (
+          <Link to='/result'>
+            <Button variant="contained" color="secondary">
+              Submit
+            </Button>
+          </Link>
 
+        )}
+      </div>
+    </div>
   );
 };
 

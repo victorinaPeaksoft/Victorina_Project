@@ -1,6 +1,4 @@
 import { quizData } from "../../data";
-// import { SET_VICTORINA } from "../actions/index";
-// const local = JSON.parse(localStorage.getItem("questions"));
 
 const initialState = {
   data: quizData,
@@ -14,7 +12,6 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case "NEXT_QUESTION":
       if (action.current === 1) {
@@ -49,7 +46,7 @@ const rootReducer = (state = initialState, action) => {
             choleric: [...state.currentUserAnswer.choleric, 4],
           },
         };
-      } else if (state.currentIndex === state.data.length - 1) {
+      } else if (state.currentIndex === state.data.length) {
         return state;
       }
       return {
