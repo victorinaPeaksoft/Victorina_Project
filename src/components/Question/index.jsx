@@ -2,25 +2,29 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import { nextClick, prevClick } from '../../store/actions/index'
+import { nextClick,nextClickOne} from '../../store/actions/index'
+import { InputRadio } from "./InputRadio/index.jsx";
 import "./Question.less"
 
+
 const Question = () => {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   const currentIndex = state.currentIndex;
   const data = state.data;
+  const ischec = state.currentUserAnswer.checked
 
-
-
-  const prev = () => {
-    dispatch(prevClick);
+  const next = (key) => {
+    dispatch(nextClick(key));
   };
 
-  const next = (e) => {
-    const current = e.target.value;
-    dispatch(nextClick(Number(current)));
-  };
+  const next1 = () => {
+    dispatch(nextClickOne)
+   
+  }
+
+//  const isChecked  = e.target.value
+
 
   return (
     <div className="container">
@@ -30,21 +34,13 @@ const Question = () => {
           <ul>
             {data[currentIndex].answers.map((item, id,) => {
               return (
-                <li key={id}>
-                  <label
-                    onClick={next}
-                    id={`${item.key}`}
-                    value={item.key}
-                  >
-                    <input
-                      type="radio"
-                      id={`${item.key}`}
-                      value={item.key}
-                      name="radiovalues"
-                    />
-                    {item.variant}
-                  </label>
-                </li>
+              <InputRadio 
+              id={id} 
+              item={item} 
+              key={id}  
+              isChecked={ischec}
+              // onChange={onChange}
+              />
               );
             })}
           </ul>
@@ -54,20 +50,20 @@ const Question = () => {
         </h3>
       </div>
       <div className="btn_controllers">
-        {currentIndex > 0 ? (
-          <Button className="btn" onClick={prev} variant="contained" color="primary">
-            PREV
+        {currentIndex >= 0 ? (
+          <Button className="btn" onClick={next1} variant="contained" color="primary">
+            NEXT
           </Button>
+        
         ) : (
           ""
         )}
         {currentIndex === data.length - 1 && (
           <Link to='/result'>
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="secondary" className="submit">
               Submit
             </Button>
           </Link>
-
         )}
       </div>
     </div>

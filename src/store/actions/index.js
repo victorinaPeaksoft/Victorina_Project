@@ -4,6 +4,10 @@ export const nextClick = (current) => {
     current,
   };
 };
-export const prevClick = {
-  type: "PREV_QUESTION",
+
+export const nextClickOne =  {
+  type: "NEXT_QUESTION_ONE",
+
+
 };
+

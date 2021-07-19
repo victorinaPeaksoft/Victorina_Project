@@ -4,6 +4,7 @@ const initialState = {
   data: quizData,
   currentIndex: 0,
   currentUserAnswer: {
+    checked: false,
     melancholic: [],
     sanguine: [],
     phlegmatic: [],
@@ -20,6 +21,7 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             melancholic: [...state.currentUserAnswer.melancholic, 1],
+            checked:true,
           },
         };
       } else if (action.current === 2) {
@@ -28,6 +30,7 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             sanguine: [...state.currentUserAnswer.sanguine, 2],
+            checked:true,
           },
         };
       } else if (action.current === 3) {
@@ -36,6 +39,7 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             phlegmatic: [...state.currentUserAnswer.phlegmatic, 3],
+            checked:true,
           },
         };
       } else if (action.current === 4) {
@@ -44,22 +48,21 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             choleric: [...state.currentUserAnswer.choleric, 4],
+            checked:true,
           },
         };
-      } else if (state.currentIndex === state.data.length - 1) {
-        return state;
+      }
+
+    case "NEXT_QUESTION_ONE":
+      if (state.currentIndex === state.data.length - 1) {
+        return {
+          ...state.currentIndex,
+          currentIndex: state.currentIndex + 1,
+        };
       }
       return {
         ...state,
         currentIndex: state.currentIndex + 1,
-      };
-    case "PREV_QUESTION":
-      if (state.currentIndex === 0) {
-        return state;
-      }
-      return {
-        ...state,
-        currentIndex: state.currentIndex - 1,
       };
 
     default:

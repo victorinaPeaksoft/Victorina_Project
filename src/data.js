@@ -1,6 +1,6 @@
 export const quizData = [
   {
-    question:"Ты комфортно чувствуешь себя в одиночестве?",
+    question: "Ты комфортно чувствуешь себя в одиночестве?",
     answers: [
       {
         variant: "Да",
