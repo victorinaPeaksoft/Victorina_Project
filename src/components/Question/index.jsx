@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import { nextClick, nextClickOne } from "../../store/actions/index";
+import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
+import { onCheck } from "../../store/actions/index";
 import "./Question.less";
 
 const Question = () => {
@@ -11,18 +12,12 @@ const Question = () => {
   const state = useSelector((state) => state);
   const currentIndex = state.currentIndex;
   const data = state.data;
-  const ischec = state.currentUserAnswer.checked;
-  // ischec take from state.currentUserAnswer (chacked = false)
-  // currentUserAnswer - this is object
+  const currentChecked = state.currentUserAnswer.currentChecked;
 
-
-  const next1 = () => {
-    dispatch(nextClickOne);
-
-  };
-
-  const next = (key) => {
-    dispatch(nextClick(key));
+  const onNext = () => {
+    dispatch(nextClickOne(currentChecked));
+    dispatch(set_temperament());
+    dispatch(onCheck(""));
   };
 
   return (
@@ -33,7 +28,14 @@ const Question = () => {
           <ul>
             {data[currentIndex].answers.map((item, id) => {
               return (
-                <InputRadio id={id} item={item} key={id} isChecked={ischec}  next={ () => next(item.key)}/>
+                <InputRadio
+                  item={item}
+                  key={id}
+                  checked={Number(currentChecked) === item.key}
+                  onChangeHandler={(e) => {
+                    dispatch(onCheck(e.target.value));
+                  }}
+                />
               );
             })}
           </ul>
@@ -46,7 +48,7 @@ const Question = () => {
         {currentIndex >= 0 ? (
           <Button
             className="btn"
-            onClick={next1}
+            onClick={onNext}
             variant="contained"
             color="primary"
           >

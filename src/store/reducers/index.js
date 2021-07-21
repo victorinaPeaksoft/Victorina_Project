@@ -1,10 +1,11 @@
 import { quizData } from "../../data";
+import {SET_TEMPERAMENT,NEXT_QUESTION_ONE,ON_CHECK} from '../actions'
 
 const initialState = {
   data: quizData,
   currentIndex: 0,
   currentUserAnswer: {
-    checked: false,
+    currentChecked: null,
     melancholic: [],
     sanguine: [],
     phlegmatic: [],
@@ -14,46 +15,46 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "NEXT_QUESTION":
-      if (action.current === 1) {
+    case SET_TEMPERAMENT:
+      if (state.currentUserAnswer.currentChecked === 1) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
             melancholic: [...state.currentUserAnswer.melancholic, 1],
-            checked:true,
+            
           },
         };
-      } else if (action.current === 2) {
+      } else if (state.currentUserAnswer.currentChecked === 2) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
             sanguine: [...state.currentUserAnswer.sanguine, 2],
-            checked:true,
+            
           },
         };
-      } else if (action.current === 3) {
+      } else if (state.currentUserAnswer.currentChecked === 3) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
             phlegmatic: [...state.currentUserAnswer.phlegmatic, 3],
-            checked:true,
+            
           },
         };
-      } else if (action.current === 4) {
+      } else if (state.currentUserAnswer.currentChecked === 4) {
         return {
           ...state,
           currentUserAnswer: {
             ...state.currentUserAnswer,
             choleric: [...state.currentUserAnswer.choleric, 4],
-            checked:true,
+          
           },
         };
       }
 
-    case "NEXT_QUESTION_ONE":
+    case NEXT_QUESTION_ONE:
       if (state.currentIndex === state.data.length - 1) {
         return {
           ...state.currentIndex,
@@ -64,6 +65,15 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         currentIndex: state.currentIndex + 1,
       };
+
+      case ON_CHECK:
+        return {
+          ...state,
+          currentUserAnswer: {
+            ...state.currentUserAnswer,
+            currentChecked: action.payload
+          }
+        }
 
     default:
       return state;

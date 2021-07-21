@@ -1,9 +1,9 @@
 import React from "react";
-import "./home.less";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import "./home.less";
 
- export const Home = () => {
+export const Home = () => {
   return (
     <div className="Home">
       <div className="container">
@@ -18,5 +18,3 @@ import { Button } from "@material-ui/core";
     </div>
   );
 };
-
-

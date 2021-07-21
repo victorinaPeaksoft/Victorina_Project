@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import "./Result.less";
 
-const Result = () => {
+export const Result = () => {
   const result = useSelector((state) => state.currentUserAnswer);
   const data = useSelector((state) => state.data);
 
@@ -13,10 +13,10 @@ const Result = () => {
   const phlegmatic = result.phlegmatic.length;
   const choleric = result.choleric.length;
 
-  const melan = Math.floor((melancholic * 100) / data.length)
-  const sang = Math.floor((sanguine * 100) / data.length)
-  const holeric = Math.floor((phlegmatic * 100) / data.length)
-  const fleg = Math.floor((choleric * 100) / data.length)
+  const melan = Math.floor((melancholic * 100) / data.length);
+  const sang = Math.floor((sanguine * 100) / data.length);
+  const holeric = Math.floor((phlegmatic * 100) / data.length);
+  const fleg = Math.floor((choleric * 100) / data.length);
 
   return (
     <div className="result_main">
@@ -47,5 +47,3 @@ const Result = () => {
     </div>
   );
 };
-
-export default Result;
