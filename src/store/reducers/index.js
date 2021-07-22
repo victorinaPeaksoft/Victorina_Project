@@ -1,5 +1,5 @@
 import { quizData } from "../../data";
-import {SET_TEMPERAMENT,NEXT_QUESTION_ONE,ON_CHECK} from '../actions'
+import { SET_TEMPERAMENT, NEXT_QUESTION_ONE, ON_CHECK } from "../actions";
 
 const initialState = {
   data: quizData,
@@ -22,7 +22,6 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             melancholic: [...state.currentUserAnswer.melancholic, 1],
-            
           },
         };
       } else if (state.currentUserAnswer.currentChecked === 2) {
@@ -31,7 +30,6 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             sanguine: [...state.currentUserAnswer.sanguine, 2],
-            
           },
         };
       } else if (state.currentUserAnswer.currentChecked === 3) {
@@ -40,7 +38,6 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             phlegmatic: [...state.currentUserAnswer.phlegmatic, 3],
-            
           },
         };
       } else if (state.currentUserAnswer.currentChecked === 4) {
@@ -49,31 +46,27 @@ const rootReducer = (state = initialState, action) => {
           currentUserAnswer: {
             ...state.currentUserAnswer,
             choleric: [...state.currentUserAnswer.choleric, 4],
-          
           },
         };
       }
 
     case NEXT_QUESTION_ONE:
       if (state.currentIndex === state.data.length - 1) {
-        return {
-          ...state.currentIndex,
-          currentIndex: state.currentIndex + 1,
-        };
+        return state;
       }
       return {
         ...state,
         currentIndex: state.currentIndex + 1,
       };
 
-      case ON_CHECK:
-        return {
-          ...state,
-          currentUserAnswer: {
-            ...state.currentUserAnswer,
-            currentChecked: action.payload
-          }
-        }
+    case ON_CHECK:
+      return {
+        ...state,
+        currentUserAnswer: {
+          ...state.currentUserAnswer,
+          currentChecked: action.payload,
+        },
+      };
 
     default:
       return state;

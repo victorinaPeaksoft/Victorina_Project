@@ -9,7 +9,6 @@ import Container from "@material-ui/core/Container";
 import "./styles/style.css";
 import "./styles/less.less";
 import "./styles/scss.scss";
-import "./bable";
 
 const store = createStore(
   rootReducers,
