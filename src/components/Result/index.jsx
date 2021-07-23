@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
 import "./Result.less";
 
 export const Result = () => {
@@ -20,7 +19,6 @@ export const Result = () => {
   const fleg = Math.floor((choleric * 100) / data.length);
 
   return (
-    // <Container fixed>
     <div className="result_main">
       <div className="result_container">
         <h1>Ваша результат</h1>
@@ -47,7 +45,5 @@ export const Result = () => {
         </Button>
       </Link>
     </div>
-    // </Container>
-
   );
 };
