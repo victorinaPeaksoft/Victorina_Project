@@ -53,6 +53,8 @@ const rootReducer = (state = initialState, action) => {
     case NEXT_QUESTION_ONE:
       if (state.currentIndex === state.data.length - 1) {
         return state;
+      } else if (state.currentIndex === null) {
+        return state;
       }
       return {
         ...state,
