@@ -2,8 +2,8 @@ import { quizData } from "../../data";
 import { SET_TEMPERAMENT, NEXT_QUESTION_ONE, ON_CHECK } from "../actions";
 
 const initialState = {
-  data: quizData,
-  currentIndex: 0,
+  // data:quizData.en, 
+  // currentIndex: 0,
   currentUserAnswer: {
     currentChecked: null,
     melancholic: [],
@@ -13,7 +13,7 @@ const initialState = {
   },
 };
 
-const rootReducer = (state = initialState, action) => {
+ export const victorinaReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_TEMPERAMENT:
       if (state.currentUserAnswer.currentChecked === 1) {
@@ -50,14 +50,14 @@ const rootReducer = (state = initialState, action) => {
         };
       }
 
-    case NEXT_QUESTION_ONE:
-      if (state.currentIndex === state.data.length - 1) {
-        return state;
-      }
-      return {
-        ...state,
-        currentIndex: state.currentIndex + 1,
-      };
+    // case NEXT_QUESTION_ONE:
+    //   if (state.currentIndex === state.data.length - 1) {
+    //     return state;
+    //   }
+    //   return {
+    //     ...state,
+    //     currentIndex: state.currentIndex + 1,
+    //   };
 
     case ON_CHECK:
       return {
@@ -73,4 +73,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+

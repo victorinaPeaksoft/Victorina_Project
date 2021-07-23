@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import rootReducer from '../reducers/index.js'
-import {Translate} from '../reducers/translate.js'
+import {victorinaReducer} from '../reducers/index.js'
+import {translateReducer} from '../reducers/translate.js'
 
 export default combineReducers({
-    rootReducer,
-    Translate
+   victorina: victorinaReducer,
+   translate: translateReducer
 })
