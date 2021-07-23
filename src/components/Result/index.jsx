@@ -23,12 +23,12 @@ export const Result = () => {
     <Container fixed>
       <div className="result_main">
         <div className="result_container">
-          <h1>Ваша результат</h1>
+          <h1>Ваши результаты:</h1>
           <Button variant="contained" color="primary" disableElevation>
             Меланхолик:{melan}%
           </Button>
           <Button variant="contained" color="primary" disableElevation>
-            Сангвник : {sang} %
+            Сангвиник : {sang} %
           </Button>
           <Button variant="contained" color="primary" disableElevation>
             Холерик: {holeric}%

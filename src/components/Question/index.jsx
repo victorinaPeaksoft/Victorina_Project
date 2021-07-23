@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
 import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
 import { onCheck } from "../../store/actions/index";
@@ -22,7 +21,6 @@ const Question = () => {
   };
 
   return (
-    <Container fixed>
       <div className="container">
         <div className="content">
           <div className="single_question">
@@ -68,8 +66,6 @@ const Question = () => {
           )}
         </div>
       </div>
-    </Container>
-
   );
 };
 

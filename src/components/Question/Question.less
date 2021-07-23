@@ -1,21 +1,25 @@
-// Container{
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
+@media(max-width: 375px){
+  .content {
+    max-width: 350px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .content {
+    width: 650px;
+    height: 300px;
+    padding: 60px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0);
+  }
   
-    .content {
-      padding: 60px;
-      box-shadow: 0 10px 15px rgb(0, 0, 0);
-      width: 650px;
-      height: 300px;
-    }
-  
-    .btn_controllers {
-      margin-top: 40px;
-    }
+  .btn_controllers {
+    margin-top: 40px;
+  }
   
     .second_main {
       text-align: left;
@@ -31,5 +35,3 @@
       margin-left: 50px;
     }
   }
-  
-// }
