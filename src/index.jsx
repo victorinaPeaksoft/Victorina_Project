@@ -5,8 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Container from "@material-ui/core/Container";
-
-import rootReducers from "./store/reducers/index.js";
+import {combineReducers} from './store/reducers/combine.js'
+// import rootReducers from "./store/reducers/index.js";
 import "./styles/style.css";
 import "./styles/less.less";
 import "./styles/scss.scss";

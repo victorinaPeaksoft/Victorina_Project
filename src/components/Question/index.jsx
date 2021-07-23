@@ -24,6 +24,8 @@ const Question = () => {
     <div className="container">
       <div className="content">
         <div className="single_question">
+          <Button>RU</Button>
+          <Button>EN</Button>
           <h2 className='second_main'>{data[currentIndex].question} </h2>
           <ul>
             {data[currentIndex].answers.map((item, id) => {
