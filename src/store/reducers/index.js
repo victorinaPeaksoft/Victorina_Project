@@ -3,14 +3,12 @@ import {
   SET_TEMPERAMENT, 
   NEXT_QUESTION_ONE, 
   ON_CHECK,
-  RU,
-  EN,
-  KG
+  
 } from "../actions";
 
 const initialState = {
-  data: data,
-  currentIndex: 0,
+  // data: data,
+  // currentIndex: 0,
   currentUserAnswer: {
     currentChecked: null,
     melancholic: [],
@@ -20,7 +18,7 @@ const initialState = {
   },
 };
 
-export const rootReducer = (state = initialState, action) => {
+export const victorinaReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_TEMPERAMENT:
       if (state.currentUserAnswer.currentChecked === 1) {
@@ -57,14 +55,14 @@ export const rootReducer = (state = initialState, action) => {
         };
       }
 
-    case NEXT_QUESTION_ONE:
-      if (state.currentIndex === state.data.length - 1) {
-        return state;
-      }
-      return {
-        ...state,
-        currentIndex: state.currentIndex + 1,
-      };
+    // case NEXT_QUESTION_ONE:
+    //   if (state.currentIndex === state.data.length - 1) {
+    //     return state;
+    //   }
+    //   return {
+    //     ...state,
+    //     currentIndex: state.currentIndex + 1,
+    //   };
 
     case ON_CHECK:
       return {

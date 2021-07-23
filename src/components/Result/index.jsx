@@ -7,8 +7,9 @@ import Container from "@material-ui/core/Container";
 import "./Result.less";
 
 export const Result = () => {
-  const result = useSelector((state) => state.currentUserAnswer);
-  const data = useSelector((state) => state.data);
+  const result = useSelector((state) => state.victorina.currentUserAnswer);
+  const data = useSelector((state) => state.translate.data);
+  
 
   const sanguine = result.sanguine.length;
   const melancholic = result.melancholic.length;

@@ -1,4 +1,5 @@
-export const data = [
+export const data = {
+  ru:[
   {
     question: "Ты комфортно чувствуешь себя в одиночестве?",
     answers: [
@@ -444,4 +445,452 @@ export const data = [
       },
     ],
   },
-];
+],
+en:[
+  {
+    question: "Are you comfortable being alone?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "All the time",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },  
+    ],
+  },
+  {
+    question: 'In silence, do you feel uncomfortable and try to fill it with something?',
+    answers: [
+        {
+          variant: "Often",
+          key: 1
+        },
+        {
+          variant: "Sometimes",
+          key: 2
+        },
+        {
+          variant: "All the time",
+          key: 3
+        },
+        {
+          variant: "Never",
+          key: 4
+        },
+    ]
+  },
+  {
+    question: 'Do you easily get along with strangers?',
+    answers: [
+        {
+          variant: "Yes",
+          key: 1
+        },
+        {
+          variant: "Sometimes",
+          key: 2
+        },
+        {
+          variant: "All the time",
+          key: 3
+        },
+        {
+          variant: "Never",
+          key: 4
+        },
+    ]
+  },
+  {
+    question: "Do you have many acquaintances and friends?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1
+      },
+      {
+        variant: "Sometimes",
+        key: 2
+      },
+      {
+        variant: "All the time",
+        key: 3
+      },
+      {
+        variant: "Never",
+        key: 4
+      },
+  ]
+  },
+  {
+    question: "Is it difficult for you to sit still?",
+    answers: [
+      {
+        variant: "Always",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "All the time",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question:
+      " If you have a problem that is entirely up to you to solve, will you tell a friend about it?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "Allt the time",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Do you remember well the evil that other people have done to you?",
+    answers: [
+      {
+        variant: "Sometimes",
+        key: 1,
+      },
+      {
+        variant: "Yes",
+        key: 2,
+      },
+      {
+        variant: "No",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Is it difficult for you to be talkative with new acquaintances?",
+    answers: [
+      {
+        variant: "No",
+        key: 1,
+      },
+      {
+        variant: "Yes",
+        key: 2,
+      },
+      {
+        variant: "Sometimes",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question:
+      "Is it easy for you to speak at meetings, meetings, presentations?",
+    answers: [
+      {
+        variant: "Easily",
+        key: 1,
+      },
+      {
+        variant: "Only if I'm well versed in what I'm talking about",
+        key: 2,
+      },
+      {
+        variant: "Sometimes",
+        key: 3,
+      },
+      {
+        variant: "I try to avoid it",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "How do you usually take criticism?",
+    answers: [
+      {
+        variant: "heavy",
+        key: 1,
+      },
+      {
+        variant: "Differently",
+        key: 2,
+      },
+      {
+        variant: "fine",
+        key: 3,
+      },
+      {
+        variant: "Easily",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Are you suffering from insomnia?",
+    answers: [
+      {
+        variant: "No",
+        key: 1,
+      },
+      {
+        variant: "Yes",
+        key: 2,
+      },
+      {
+        variant: "Sometimes",
+        key: 3,
+      },
+      {
+        variant: "Never",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Do you easily tolerate life's failures?",
+    answers: [
+      {
+        variant: "Hard",
+        key: 1,
+      },
+      {
+        variant: "Differently",
+        key: 2,
+      },
+      {
+        variant: "Depends on what",
+        key: 3,
+      },
+      {
+        variant: "easily",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Is it hard for you to ask strangers something?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Sometimes it's hard",
+        key: 2,
+      },
+      {
+        variant: "No",
+        key: 3,
+      },
+      {
+        variant: "easily",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Can you successfully cope with multiple tasks at once?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "No",
+        key: 3,
+      },
+      {
+        variant: "Depends on what",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Do you usually plan your affairs in advance?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Differently",
+        key: 2,
+      },
+      {
+        variant: "Only the most important",
+        key: 3,
+      },
+      {
+        variant: "Depends on what",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "When someone yells at you, do you respond in kind?",
+    answers: [
+      {
+        variant: "Yes",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "probably ",
+        key: 3,
+      },
+      {
+        variant: "No",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Are you prone to mood swings?",
+    answers: [
+      {
+        variant: "it happens",
+        key: 1,
+      },
+      {
+        variant: "Sometimes",
+        key: 2,
+      },
+      {
+        variant: "No",
+        key: 3,
+      },
+      {
+        variant: "Yes",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Often not collected, show haste in decisions?",
+    answers: [
+      {
+        variant: "Probably",
+        key: 1,
+      },
+      {
+        variant: "Yes",
+        key: 2,
+      },
+      {
+        variant: "Never",
+        key: 3,
+      },
+      {
+        variant: "No",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "Do you love being the center of attention?",
+    answers: [
+      {
+        variant: "No",
+        key: 1,
+      },
+      {
+        variant: "Yes",
+        key: 2,
+      },
+      {
+        variant: "Sometimes",
+        key: 3,
+      },
+      {
+        variant: "Probably",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question: "What type of speech do you predominate?",
+    answers: [
+      {
+        variant: "Discreet type",
+        key: 1,
+      },
+      {
+        variant: "Speech is fast and is accompanied by expressive facial expressions and gestures",
+        key: 2,
+      },
+      {
+        variant: "Slow, with weak facial expressions",
+        key: 3,
+      },
+      {
+        variant: "Expressive facial expressions, hasty speech, harsh gestures",
+        key: 4,
+      },
+    ],
+  },
+  {
+    question:
+      "How do you most often feel before an important event, does it matter - good or bad?",
+    answers: [
+      {
+        variant: "I'm very nervous, I can break",
+        key: 1,
+      },
+      {
+        variant: "It depends",
+        key: 2,
+      },
+      {
+        variant: "On one but deep",
+        key: 3,
+      },
+      {
+        variant:
+          "I stay calm or a little nervous, but I believe that everything will be fine",
+        key: 4,
+      },
+    ],
+  },
+]
+};

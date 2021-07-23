@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Container from "@material-ui/core/Container";
 
-import {rootReducer} from "./store/reducers/index.js";
+import rootReducer from './store/reducers/combine.js'
 import "./styles/style.css";
 import "./styles/less.less";
 
