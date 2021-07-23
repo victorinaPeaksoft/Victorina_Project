@@ -1,8 +1,15 @@
-import { quizData } from "../../data";
-import { SET_TEMPERAMENT, NEXT_QUESTION_ONE, ON_CHECK } from "../actions";
+import { data } from "../../data";
+import { 
+  SET_TEMPERAMENT, 
+  NEXT_QUESTION_ONE, 
+  ON_CHECK,
+  RU,
+  EN,
+  KG
+} from "../actions";
 
 const initialState = {
-  data: quizData,
+  data: data,
   currentIndex: 0,
   currentUserAnswer: {
     currentChecked: null,
@@ -13,7 +20,7 @@ const initialState = {
   },
 };
 
-const rootReducer = (state = initialState, action) => {
+export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_TEMPERAMENT:
       if (state.currentUserAnswer.currentChecked === 1) {
@@ -69,10 +76,7 @@ const rootReducer = (state = initialState, action) => {
           currentChecked: action.payload,
         },
       };
-
     default:
       return state;
   }
 };
-
-export default rootReducer;
