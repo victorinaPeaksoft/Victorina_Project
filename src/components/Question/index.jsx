@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 
 import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
-import { onCheck } from "../../store/actions/index";
+import { onCheck, prev } from "../../store/actions/index";
 
 import "./Question.less";
 
@@ -24,57 +24,72 @@ const Question = () => {
     dispatch(set_temperament());
     dispatch(onCheck(""));
   };
+  const prevNext = () => {
+    dispatch(prev())
+  }
 
   return (
     <Container>
- <div className="container">
-      <div className="content">
-        <div className="single_question">
-          <h2 className='second_main'>{data[currentIndex].question} </h2>
-          <ul>
-            {data[currentIndex].answers.map((item, id) => {
-              return (
-                <InputRadio
-                  item={item}
-                  key={id}
-                  checked={Number(currentChecked) === item.key}
-                  onChangeHandler={(e) => {
-                    dispatch(onCheck(e.target.value));
-                  }}
-                />
-              );
-            })}
-          </ul>
+      <div className="container">
+        <div className="content">
+          <div className="single_question">
+            <h2 className='second_main'>{data[currentIndex].question} </h2>
+            <ul>
+              {data[currentIndex].answers.map((item, id) => {
+                return (
+                  <InputRadio
+                    item={item}
+                    key={id}
+                    checked={Number(currentChecked) === item.key}
+                    onChangeHandler={(e) => {
+                      dispatch(onCheck(e.target.value));
+                    }}
+                  />
+                );
+              })}
+            </ul>
+          </div>
+          <h3>
+            {currentIndex}/{data.length - 1}
+          </h3>
         </div>
-        <h3>
-          {currentIndex}/{data.length - 1}
-        </h3>
-      </div>
-      <div className="btn_controllers">
-        {currentIndex >= 0 ? (
-          <Button
-            className="btn"
-            onClick={onNext}
-            variant="contained"
-            color="primary"
-          >
-            NEXT
-          </Button>
-        ) : (
-          ""
-        )}
-        {currentIndex === data.length - 1 && (
-          <Link to="/result">
-            <Button variant="contained" color="secondary" className="submit">
-              Submit
+        <div className="btn_controllers">
+          {currentIndex !== 0 ? (
+            <Button
+              className="btn1"
+              onClick={prevNext}
+              variant="contained"
+              // color="secondary"
+              style={{ margin: "20px ,20px" }}
+            >
+              Prev
             </Button>
-          </Link>
-        )}
+          ) : (
+            ""
+          )}
+          {currentIndex >= 0 ? (
+            <Button
+              className="btn"
+              onClick={onNext}
+              variant="contained"
+              color="primary"
+            >
+              NEXT
+            </Button>
+          ) : (
+            ""
+          )}
+          {currentIndex === data.length - 1 && (
+            <Link to="/result">
+              <Button variant="contained" color="secondary" className="submit">
+                Submit
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
 
     </Container>
-   
   );
 };
 

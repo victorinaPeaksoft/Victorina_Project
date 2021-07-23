@@ -1,11 +1,12 @@
 import { data } from "../../data";
-import { 
-  SET_TEMPERAMENT, 
-  NEXT_QUESTION_ONE, 
+import {
+  SET_TEMPERAMENT,
+  NEXT_QUESTION_ONE,
   ON_CHECK,
+  PREV_QUESTION_ONE,
   RU,
   EN,
-  KG
+  KG,
 } from "../actions";
 
 const initialState = {
@@ -60,14 +61,19 @@ export const rootReducer = (state = initialState, action) => {
     case NEXT_QUESTION_ONE:
       if (state.currentIndex === state.data.length - 1) {
         return state;
-      } else if (state.currentIndex === null) {
-        return state;
       }
       return {
         ...state,
         currentIndex: state.currentIndex + 1,
       };
-
+    case PREV_QUESTION_ONE:
+      if (state.currentIndex === state.data.length - 1) {
+        return state;
+      }
+      return {
+        ...state,
+        currentIndex: state.currentIndex - 1,
+      };
     case ON_CHECK:
       return {
         ...state,
