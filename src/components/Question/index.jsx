@@ -1,10 +1,13 @@
 import React from "react";
+
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+
 import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
 import { onCheck } from "../../store/actions/index";
+
 import "./Question.less";
 
 const Question = () => {
