@@ -4,8 +4,9 @@ import Layout from "./components/Layout/index.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import {rootReducer} from "./store/reducers/index.js";
 import Container from "@material-ui/core/Container";
+
+import {rootReducer} from "./store/reducers/index.js";
 import "./styles/style.css";
 import "./styles/less.less";
 
@@ -22,6 +23,7 @@ const App = () => (
     </Container>
   </div>
 );
+
 
 render(
   <React.StrictMode>
