@@ -3,6 +3,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+
 
 import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
@@ -24,7 +26,8 @@ const Question = () => {
   };
 
   return (
-    <div className="container">
+    <Container>
+ <div className="container">
       <div className="content">
         <div className="single_question">
           <h2 className='second_main'>{data[currentIndex].question} </h2>
@@ -70,6 +73,8 @@ const Question = () => {
       </div>
     </div>
 
+    </Container>
+   
   );
 };
 

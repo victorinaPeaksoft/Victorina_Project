@@ -8,6 +8,7 @@ export const InputRadio = ({ item, checked, onChangeHandler }) => {
           <input
             type="radio"
             id={`${item.key}`}
+            style={{marginRight: '15px'}}
             value={item.key}
             checked={checked}
             onChange={onChangeHandler}
