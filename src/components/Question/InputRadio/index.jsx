@@ -11,6 +11,7 @@ export const InputRadio = ({ item, checked, onChangeHandler }) => {
             value={item.key}
             checked={checked}
             onChange={onChangeHandler}
+            style={{ marginRight: '12px' }}
           />
           {item.variant}
         </label>
