@@ -3,13 +3,13 @@ import LanguageIcon from '@material-ui/icons/Language';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
-import {RU,EN} from '../../store/actions'
+// import Container from "@material-ui/core/Container";
+import { RU, EN, prev } from '../../store/actions'
 
 import { set_temperament, nextClickOne } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
 import { onCheck } from "../../store/actions/index";
-import {switch_language} from '../../store/actions'
+import { switch_language } from '../../store/actions'
 import "./Question.less";
 
 const Question = () => {
@@ -24,19 +24,22 @@ const Question = () => {
     dispatch(set_temperament());
     dispatch(onCheck(""));
   };
+  const prevNext = () => {
+    dispatch(prev())
+  }
 
   return (
-    <Container>
- <div className="container">
+    // <Container>
+    <div className="container">
       <div className="content">
         <div className="single_question">
-        <div style={{display: 'flex'}}>
-        <LanguageIcon style={{fill: 'darkBlue',marginTop: '5px'}} />
-        <Button color="primary" onClick={() => dispatch(switch_language(RU))}>RU</Button>
-        <Button color="secondary" onClick={() => dispatch(switch_language(EN))}>EN</Button>
+          <div style={{ display: 'flex' }}>
+            <LanguageIcon style={{ fill: 'darkBlue', marginTop: '5px' }} />
+            <Button color="primary" onClick={() => dispatch(switch_language(RU))}>RU</Button>
+            <Button color="secondary" onClick={() => dispatch(switch_language(EN))}>EN</Button>
 
-        {/* <Button color="secondary"  >KG</Button> */}
-      </div>
+            {/* <Button color="secondary"  >KG</Button> */}
+          </div>
           <h2 className='second_main'>{data[currentIndex].question} </h2>
           <ul>
             {data[currentIndex].answers.map((item, id) => {
@@ -53,35 +56,43 @@ const Question = () => {
             })}
           </ul>
         </div>
-        <h3>
-          {currentIndex}/{data.length - 1}
-        </h3>
-      </div>
-      <div className="btn_controllers">
-        {currentIndex >= 0 ? (
-          <Button
-            className="btn"
-            onClick={onNext}
-            variant="contained"
-            color="primary"
-          >
-            NEXT
-          </Button>
-        ) : (
-          ""
-        )}
-        {currentIndex === data.length - 1 && (
-          <Link to="/result">
-            <Button variant="contained" color="secondary" className="submit">
-              Submit
+        {currentIndex} / {data.length - 1}
+        <div className="btn_controllers">
+          {currentIndex !== 0 ? (
+            <Button
+              className="btn1"
+              onClick={prevNext}
+              variant="contained"
+              // color="secondary"
+              style={{ margin: "20px ,20px" }}
+            >
+              Prev
             </Button>
-          </Link>
-        )}
+          ) : (
+            ""
+          )}
+          {currentIndex >= 0 ? (
+            <Button
+              className="btn"
+              onClick={onNext}
+              variant="contained"
+              color="primary"
+            >
+              NEXT
+            </Button>
+          ) : (
+            ""
+          )}
+          {currentIndex === data.length - 1 && (
+            <Link to="/result">
+              <Button variant="contained" color="secondary" className="submit">
+                Submit
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
-
-    </Container>
-   
   );
 };
 

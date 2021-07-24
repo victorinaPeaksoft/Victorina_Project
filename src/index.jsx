@@ -16,12 +16,13 @@ const store = createStore(
 );
 
 const App = () => (
-  <div className="app">
-    <Container fixed>
+  <Container fixed>
+    <div className="app">
       <h1 class="animate__animated animate__bounce">Викторина</h1>
       <Layout />
-    </Container>
-  </div>
+    </div>
+  </Container>
+
 );
 
 

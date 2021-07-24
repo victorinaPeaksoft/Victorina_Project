@@ -1,10 +1,5 @@
-import { data } from "../../data";
-import { 
-  SET_TEMPERAMENT, 
-  NEXT_QUESTION_ONE, 
-  ON_CHECK,
-  
-} from "../actions";
+// import { data } from "../../data";
+import { SET_TEMPERAMENT, NEXT_QUESTION_ONE, ON_CHECK } from "../actions";
 
 const initialState = {
   // data: data,
