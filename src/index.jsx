@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Container from "@material-ui/core/Container";
 
-import {rootReducer} from "./store/reducers/index.js";
+import rootReducer from './store/reducers/combine.js'
 import "./styles/style.css";
 import "./styles/less.less";
 
@@ -16,12 +16,13 @@ const store = createStore(
 );
 
 const App = () => (
-  <div className="app">
-    <Container fixed>
+  <Container fixed>
+    <div className="app">
       <h1 class="animate__animated animate__bounce">Викторина</h1>
       <Layout />
-    </Container>
-  </div>
+    </div>
+  </Container>
+
 );
 
 

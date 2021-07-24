@@ -8,13 +8,15 @@ export const InputRadio = ({ item, checked, onChangeHandler }) => {
           <input
             type="radio"
             id={`${item.key}`}
-            style={{marginRight: '15px'}}
+            style={{ marginRight: '15px' }}
             value={item.key}
             checked={checked}
             onChange={onChangeHandler}
             style={{ marginRight: '12px' }}
           />
-          {item.variant}
+          <span className='item_variant'>
+            {item.variant}
+          </span>
         </label>
       </li>
     </div>
