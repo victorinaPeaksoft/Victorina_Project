@@ -1,10 +1,8 @@
-// import { StarRate } from '@material-ui/icons'
 import { data } from "../../data";
-import { RU, EN } from "../actions";
+import { RU, EN, REFRESH } from "../actions";
 import { NEXT_QUESTION_ONE, PREV_QUESTION_ONE } from "../actions";
 
 export const initialState = {
-  // data: data,
   currentIndex: 0,
   data: data.ru,
   lang: RU,
@@ -37,6 +35,12 @@ export const translateReducer = (state = initialState, action) => {
         ...state,
         currentIndex: state.currentIndex - 1,
       };
+    case REFRESH:
+      return {
+        ...state,
+        currentIndex: 0,
+      };
+
     default:
       return state;
   }

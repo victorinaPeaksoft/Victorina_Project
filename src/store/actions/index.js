@@ -5,6 +5,8 @@ export const PREV_QUESTION_ONE = "PREV_QUESTION_ONE";
 export const RU = "RU";
 export const KG = "KG";
 export const EN = "EN";
+export const REFRESH = "REFRESH";
+export const REFRESH_RESULT = "REFRESH_RESULT";
 
 export const switch_language = (type) => ({
   type,
@@ -25,4 +27,10 @@ export const onCheck = (key) => ({
 
 export const prev = () => ({
   type: PREV_QUESTION_ONE,
+});
+export const refresh = () => ({
+  type: REFRESH,
+});
+export const refresh_result = () => ({
+  type: REFRESH_RESULT,
 });

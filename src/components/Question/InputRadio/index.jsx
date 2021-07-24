@@ -13,6 +13,7 @@ export const InputRadio = ({ item, checked, onChangeHandler }) => {
             checked={checked}
             onChange={onChangeHandler}
             style={{ marginRight: '12px' }}
+
           />
           <span className='item_variant'>
             {item.variant}

@@ -1,9 +1,6 @@
-// import { data } from "../../data";
-import { SET_TEMPERAMENT, NEXT_QUESTION_ONE, ON_CHECK } from "../actions";
+import { SET_TEMPERAMENT, ON_CHECK, REFRESH_RESULT } from "../actions";
 
 const initialState = {
-  // data: data,
-  // currentIndex: 0,
   currentUserAnswer: {
     currentChecked: null,
     melancholic: [],
@@ -49,22 +46,22 @@ export const victorinaReducer = (state = initialState, action) => {
           },
         };
       }
-
-    // case NEXT_QUESTION_ONE:
-    //   if (state.currentIndex === state.data.length - 1) {
-    //     return state;
-    //   }
-    //   return {
-    //     ...state,
-    //     currentIndex: state.currentIndex + 1,
-    //   };
-
     case ON_CHECK:
       return {
         ...state,
         currentUserAnswer: {
           ...state.currentUserAnswer,
           currentChecked: action.payload,
+        },
+      };
+    case REFRESH_RESULT:
+      return {
+        ...state,
+        currentUserAnswer: {
+          choleric: [],
+          phlegmatic: [],
+          sanguine: [],
+          melancholic: [],
         },
       };
     default:
