@@ -1,15 +1,11 @@
 import React from "react";
-import LanguageIcon from '@material-ui/icons/Language';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-// import Container from "@material-ui/core/Container";
-import { RU, EN, prev } from '../../store/actions'
 
-import { set_temperament, nextClickOne } from "../../store/actions/index.js";
+import { set_temperament, nextClickOne, RU, EN, prev } from "../../store/actions/index.js";
 import { InputRadio } from "./InputRadio/index.jsx";
 import { onCheck } from "../../store/actions/index";
-import { switch_language } from '../../store/actions'
 import "./Question.less";
 
 const Question = () => {
@@ -19,77 +15,74 @@ const Question = () => {
   const data = useSelector((state) => state.translate.data);
   const currentChecked = state.currentUserAnswer.currentChecked;
 
+  const [disable, setDisable] = React.useState(true);
   const onNext = () => {
     dispatch(nextClickOne(currentChecked));
     dispatch(set_temperament());
     dispatch(onCheck(""));
+    setDisable(true)
   };
   const prevNext = () => {
     dispatch(prev())
   }
 
   return (
-    // <Container>
     <div className="container">
       <div className="content">
         <div className="single_question">
-          <div style={{ display: 'flex' }}>
-            <LanguageIcon style={{ fill: 'darkBlue', marginTop: '5px' }} />
-            <Button color="primary" onClick={() => dispatch(switch_language(RU))}>RU</Button>
-            <Button color="secondary" onClick={() => dispatch(switch_language(EN))}>EN</Button>
-
-            {/* <Button color="secondary"  >KG</Button> */}
-          </div>
-          <h2 className='second_main'>{data[currentIndex].question} </h2>
+          <h2 className='second_main'>{data.questions[currentIndex].question} </h2>
           <ul>
-            {data[currentIndex].answers.map((item, id) => {
+            {data.questions[currentIndex].answers.map((item, id) => {
               return (
                 <InputRadio
                   item={item}
                   key={id}
                   checked={Number(currentChecked) === item.key}
                   onChangeHandler={(e) => {
+                    setDisable(false)
                     dispatch(onCheck(e.target.value));
                   }}
+
+
                 />
               );
             })}
           </ul>
         </div>
-        {currentIndex} / {data.length - 1}
+        {currentIndex} / {data.questions.length - 1}
         <div className="btn_controllers">
           {currentIndex !== 0 ? (
             <Button
               className="btn1"
               onClick={prevNext}
               variant="contained"
-              // color="secondary"
               style={{ margin: "20px ,20px" }}
             >
-              Prev
+              {data.prevButton}
             </Button>
           ) : (
             ""
           )}
-          {currentIndex >= 0 ? (
+          {currentIndex === data.questions.length - 1 ? (
+            <Link to="/result">
+              <Button variant="contained" color="secondary" className="submit">
+                {data.submitButton}
+
+              </Button>
+            </Link>
+          ) : (
             <Button
               className="btn"
+              id='btn'
               onClick={onNext}
               variant="contained"
               color="primary"
+              disabled={disable}
             >
-              NEXT
+              {data.nextButton}
             </Button>
-          ) : (
-            ""
           )}
-          {currentIndex === data.length - 1 && (
-            <Link to="/result">
-              <Button variant="contained" color="secondary" className="submit">
-                Submit
-              </Button>
-            </Link>
-          )}
+
         </div>
       </div>
     </div>

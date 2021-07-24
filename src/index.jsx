@@ -4,9 +4,10 @@ import Layout from "./components/Layout/index.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { useSelector } from "react-redux";
 import Container from "@material-ui/core/Container";
-
 import rootReducer from './store/reducers/combine.js'
+
 import "./styles/style.css";
 import "./styles/less.less";
 
@@ -15,16 +16,18 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-const App = () => (
-  <Container fixed>
-    <div className="app">
-      <h1 class="animate__animated animate__bounce">Викторина</h1>
-      <Layout />
-    </div>
-  </Container>
+const App = () => {
+  const data2 = useSelector((state) => state.translate.data);
 
-);
-
+  return (
+    <Container fixed>
+      <div className="app">
+        <h1 class="animate__animated animate__bounce">{data2.victorina}</h1>
+        <Layout />
+      </div>
+    </Container>
+  )
+};
 
 render(
   <React.StrictMode>
