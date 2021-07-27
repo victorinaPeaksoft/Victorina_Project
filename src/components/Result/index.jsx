@@ -13,11 +13,11 @@ export const Result = () => {
   const data = useSelector((state) => state.translate.data.questions);
   const data2 = useSelector((state) => state.translate.data);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const sanguine = result.sanguine.length;
   const melancholic = result.melancholic.length;
-  const phlegmatic = result.phlegmatic.length
+  const phlegmatic = result.phlegmatic.length;
   const choleric = result.choleric.length;
 
   const melan = Math.floor((melancholic * 100) / data.length);
@@ -26,24 +26,44 @@ export const Result = () => {
   const fleg = Math.floor((choleric * 100) / data.length);
 
   const refreshResult = () => {
-    dispatch(refresh())
-    dispatch(refresh_result())
-  }
+    dispatch(refresh());
+    dispatch(refresh_result());
+  };
   return (
     <Container>
       <div className="result_main">
         <div className="result_container">
           <h1>{data2.main}</h1>
-          <Button variant="contained" color="primary" disableElevation>
+          <Button
+            variant="contained"
+            color="primary"
+            disableElevation
+            className="result_button"
+          >
             {data2.melancholic}:{melan}%
           </Button>
-          <Button variant="contained" color="primary" disableElevation>
+          <Button
+            variant="contained"
+            color="primary"
+            disableElevation
+            className="result_button"
+          >
             {data2.sanguine} : {sang} %
           </Button>
-          <Button variant="contained" color="primary" disableElevation>
+          <Button
+            variant="contained"
+            color="primary"
+            disableElevation
+            className="result_button"
+          >
             {data2.choleric}: {holeric}%
           </Button>
-          <Button variant="contained" color="primary" disableElevation>
+          <Button
+            variant="contained"
+            color="primary"
+            disableElevation
+            className="result_button"
+          >
             {data2.phlegmatic} : {fleg}%
           </Button>
         </div>
@@ -51,7 +71,7 @@ export const Result = () => {
           <Button
             variant="contained"
             color="secondary"
-            style={{ marginTop: "50px" }}
+            style={{ marginTop: 40 }}
             onClick={() => refreshResult()}
           >
             {data2.address}
@@ -59,6 +79,5 @@ export const Result = () => {
         </Link>
       </div>
     </Container>
-
   );
 };

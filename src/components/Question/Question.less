@@ -1,64 +1,62 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+
+  .content {
+    padding: 60px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0);
+    width: 70%;
+    height: 100%;
+  }
+
+  .btn_controllers {
+    margin-top: 40px;
+  }
+
+  .second_main {
+    text-align: left;
+  }
+
+  li {
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+  }
+  label {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-  
+
     .content {
       padding: 60px;
       box-shadow: 0 10px 15px rgb(0, 0, 0);
-      width: 70%;
-      height: 100%;
+      width: 60%;
+      height: 80%;
     }
-  
-  .btn_controllers {
-    margin-top: 40px;
-  }
-  
-    .second_main {
-      text-align: left;
-    }
-  
-    li {
-      list-style: none;
-      text-align: left;
-      margin-top: 15px;
-    }
-    label{
-      display: flex;
-    }
-  }
-  
-  @media (max-width: 420px) {
-    .container {
+    Button {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      margin-top: 50px;
-    
-      .content {
-        padding: 60px;
-        box-shadow: 0 10px 15px rgb(0, 0, 0);
-        width: 60%;
-        height: 80%;
-      }
-      Button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        border-radius: 5px;
-    
-      }
-      .btn_controllers{
-        display: flex;
-      }
-      .btn1{
-        margin-left: 12px;
-       
-      }
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .btn_controllers {
+      display: flex;
+    }
+    .btn1 {
+      margin-left: 12px;
     }
   }
+}

@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { useSelector } from "react-redux";
 import Container from "@material-ui/core/Container";
-import rootReducer from './store/reducers/combine.js'
+import rootReducer from "./store/reducers/combine.js";
 
 import "./styles/style.css";
 import "./styles/less.less";
@@ -22,11 +22,16 @@ const App = () => {
   return (
     <Container fixed>
       <div className="app">
-        <h1 class="animate__animated animate__bounce">{data2.victorina}</h1>
+        <h1
+          style={{ paddingTop: 70 }}
+          class="animate__animated animate__bounce"
+        >
+          {data2.victorina}
+        </h1>
         <Layout />
       </div>
     </Container>
-  )
+  );
 };
 
 render(
