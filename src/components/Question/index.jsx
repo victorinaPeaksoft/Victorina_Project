@@ -56,7 +56,7 @@ const Question = () => {
               className="btn1"
               onClick={prevNext}
               variant="contained"
-              style={{ margin: "20px ,20px" }}
+              style={{ margin: "20px ,20px"  }}
             >
               {data.prevButton}
             </Button>
@@ -65,7 +65,10 @@ const Question = () => {
           )}
           {currentIndex === data.questions.length - 1 ? (
             <Link to="/result">
-              <Button variant="contained" color="secondary" className="submit">
+              <Button variant="contained" color="secondary" 
+              className="submit"
+              style={{marginLeft:10}}
+              >
                 {data.submitButton}
 
               </Button>
@@ -78,6 +81,7 @@ const Question = () => {
               variant="contained"
               color="primary"
               disabled={disable}
+              style={{marginLeft:10}}
             >
               {data.nextButton}
             </Button>
