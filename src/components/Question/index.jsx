@@ -62,7 +62,6 @@ const Question = () => {
               className="btn1"
               onClick={prevNext}
               variant="contained"
-              style={{ margin: "20px ,20px" }}
             >
               {data.prevButton}
             </Button>
@@ -75,7 +74,6 @@ const Question = () => {
                 variant="contained"
                 color="secondary"
                 className="submit"
-                style={{ marginLeft: 20 }}
               >
                 {data.submitButton}
               </Button>
@@ -88,7 +86,6 @@ const Question = () => {
               variant="contained"
               color="primary"
               disabled={disable}
-              style={{ marginLeft: 20 }}
             >
               {data.nextButton}
             </Button>
