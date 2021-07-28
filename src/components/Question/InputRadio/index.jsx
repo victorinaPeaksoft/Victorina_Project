@@ -2,7 +2,7 @@ import React from "react";
 
 export const InputRadio = ({ item, checked, onChangeHandler }) => {
   return (
-    <div>
+    <div className='InputDiv'>
       <li>
         <label
           id={`${item.key}`}

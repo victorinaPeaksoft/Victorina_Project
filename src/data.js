@@ -923,7 +923,7 @@ export const data = {
     nextButton: "Next",
     prevButton: "Prev",
     submitButton: "Submit",
-    main: "You result",
+    main: "Your result",
     sanguine: "Sanguine",
     melancholic: "Melancholic",
     phlegmatic: "Phlegmatic",
